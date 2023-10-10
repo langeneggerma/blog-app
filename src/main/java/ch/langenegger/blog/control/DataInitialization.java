@@ -1,5 +1,7 @@
-package ch.langenegger;
+package ch.langenegger.blog.control;
 
+import ch.langenegger.blog.control.BlogRepository;
+import ch.langenegger.blog.entity.Blog;
 import io.quarkus.runtime.StartupEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
