@@ -2,6 +2,7 @@ package ch.langenegger;
 
 import java.util.List;
 
+import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
 
 import jakarta.enterprise.context.Dependent;
@@ -16,13 +17,14 @@ public class BlogService {
     Logger logger;
 
     public List<Blog> getBlogs() {
-        var blogs = blogRepository.getBlogs();
+        var blogs = blogRepository.listAll();
         logger.info("Returning " + blogs.size() + " blogs");
         return blogs;
     }
 
+    @Transactional
     public void addBlog(Blog blog) {
         logger.info("Adding blog " + blog.getTitle());
-        blogRepository.addBlog(blog);
+        blogRepository.persist(blog);
     }
 }
