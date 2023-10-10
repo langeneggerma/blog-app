@@ -17,5 +17,6 @@ public class DataInitialization {
 
         blogRepository.persist(new Blog("Testing Blog", "This is my testing blog"));
         blogRepository.persist(new Blog("Testing Blog 2", "This is my testing blog 2"));
+        blogRepository.persist(new Blog("Testing Blog 3", "This is my testing blog 3"));
     }
 }
